@@ -19,16 +19,16 @@ class ExternalServices {
 
   moviesSearch(name = "home") {
     //function to check name string and retrun it as a callback to the
+    // decide the name and year
+
+    const list = ["batman", "superman", 2022];
+    const date = new Date().getFullYear();
+
+    const index = Math.floor(Math.random() * list.length);
     switch (name) {
       case "home":
-        const list = ["batman", "superman", 2022];
-        const date = new Date().getFullYear();
-        const index = Math.floor(Math.random() * list.length); //1-3
-
         return `s=${list[index]}&y=${date}]`;
 
-        // decide the name and year
-        break;
       default:
         // s=${name}
         break;
