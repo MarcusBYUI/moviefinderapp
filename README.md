@@ -5,3 +5,5 @@ WDD330 Team Project
 Authors:
 Ojo-Osasere Ayodeji Marcus
 Angel Lugo Tehuitzil
+
+Rony Nickson Calderon Sara
