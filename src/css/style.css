@@ -6,6 +6,9 @@ margin: 0;
 body{
   font-family: 'Oswald', sans-serif;
 }
+.img_icon{
+  filter: invert(100%);
+}
 h2{
   font-size: 45px;
 }
@@ -54,15 +57,28 @@ nav{
   padding-top: 55px;
 }
 .movie_section_h2{
-  padding-left:80px;
+  padding-left:280px;
 }
 .movie_section{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  text-align: center;
-  align-items: center;
+  column-gap: 15px;
   margin-top: 25px;
+  width: 70%;
+  margin: 0 auto;
+
 }
+.movie_section img{
+  width: 300px;
+  height: 450px;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+
+}
+
 /* Phones */
 @media only screen and (max-width: 600px) {
   .search_bar{
@@ -84,16 +100,28 @@ nav{
     align-items: center;
     margin-top: 25px;
   }
+  .movie_section_h2{
+    padding: 0;
+  }
 }
 
-.movie_section img{
-  width: 300px;
-  padding: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* # Mobile
+@media only screen and (min-width: 480px){
 
 }
+
+/* # Tablet */
+/* @media only screen and (min-width: 768px){
+
+}  */
+
+/* # Desktop */
+/* @media only screen and (min-width: 992px){
+
+} */ 
+
+
+
 footer{
 background-color: #6A040F;
 height: 100px;
