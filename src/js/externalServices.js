@@ -14,14 +14,15 @@ class ExternalServices {
   async returnMovies(callback) {
     const response = await fetch(`${this.api}&${callback}`);
     const data = await convertToJson(response);
-    console.log(data);
+    // console.log(data);
+    return data;
   }
 
   moviesSearch(name = "home") {
     //function to check name string and retrun it as a callback to the
     // decide the name and year
 
-    const list = ["batman", "superman", 2022];
+    const list = ["batman", "superman", 2022, "doctor", "lost", "house"];
     const date = new Date().getFullYear();
 
     const index = Math.floor(Math.random() * list.length);
@@ -30,8 +31,9 @@ class ExternalServices {
         return `s=${list[index]}&y=${date}]`;
 
       default:
-        // s=${name}
-        break;
+        const newName = name.replace(/\s/g, "+");
+        // console.log(newName);
+        return `s=${newName}`;
     }
   }
 
