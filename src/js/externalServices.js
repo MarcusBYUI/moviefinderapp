@@ -14,10 +14,10 @@ class ExternalServices {
   async returnMovies(callback) {
     const response = await fetch(`${this.api}&${callback}`);
     const data = await convertToJson(response);
-    console.log(data);
+    return data;
   }
 
-  moviesSearch(name = "home") {
+  moviesSearch(name = "home", details = false) {
     //function to check name string and retrun it as a callback to the
     // decide the name and year
 
@@ -25,19 +25,18 @@ class ExternalServices {
     const date = new Date().getFullYear();
 
     const index = Math.floor(Math.random() * list.length);
-    switch (name) {
-      case "home":
-        return `s=${list[index]}&y=${date}]`;
-
-      default:
-        // s=${name}
-        break;
+    // returns the movies on the homepage
+    if (name == "home") {
+      return `s=${list[index]}&y=${date}`;
     }
-  }
-
-  singleMovieSearch (movieId = "tt0796366") {
-      const movie = `i=${movieId}&plot=full`
-      return movie
+    // returns the movie for the details page
+    else if (details) {
+      return `i=${name}&plot=full`;
+    }
+    // returns the movie for the search page
+    else {
+      return `s=${name}`;
+    }
   }
 }
 

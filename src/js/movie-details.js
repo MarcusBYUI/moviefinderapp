@@ -1,9 +1,7 @@
-import { getUrlParams } from "./utils";
-import ExternalServices from "./externalServices";
+import { loadHeaderFooter } from "./utils";
+import DetailsProcess from "./movie-detailsProcess";
 
-const movieId = getUrlParams("movie");
-const services = new ExternalServices();
+loadHeaderFooter();
 
-const movie = services.returnMovies(services.singleMovieSearch(movieId));
-
-console.log(movie); //Testing single movie response with click on link (movie-listing page link)
+const processDetails = new DetailsProcess();
+processDetails.pullMovie();
