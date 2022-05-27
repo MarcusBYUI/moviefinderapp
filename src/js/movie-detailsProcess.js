@@ -14,6 +14,12 @@ class DetailsProcess {
   }
 
   renderMovieDetails() {
+    //set document title
+    document.title += ` . ${this.movie.Title}`;
+    //set document description
+    document.getElementsByTagName("meta")[
+      "description"
+    ].content = `Movies details page for ${this.movie.Title}`;
     document.querySelector(".details-page-image").src = this.movie.Poster;
     document.querySelector(".details-page-image").alt = this.movie.Title;
     document.querySelector(".details-page-title").innerHTML = this.movie.Title;
