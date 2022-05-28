@@ -7,6 +7,7 @@ const services = new ExternalServices();
 export function renderMovies(userInputString) {
     // Getting API data with "returnMovies"
     const moviesResponse = services.returnMovies(services.moviesSearch(userInputString));
+    console.log(moviesResponse);
     // console.log(moviesResponse); //When printing moviesResponse I got a promise.
 
     // Handling the promise. Extracting data, and creating div elements for each movie
@@ -38,19 +39,123 @@ export function renderMovies(userInputString) {
         
                 document.querySelector(".movie-list-container").appendChild(movieInfo);
             }
+
+            // Down here I'll handle pages
+            const numOfResults = +`${moviesList.totalResults}`;
+            // const numOfResults = 20;
+
+            if (numOfResults > 10) {
+                
+                const currentPage = +getUrlParams("page");
+                const remainder = numOfResults % 10;
+                let numOfPages = numOfResults / 10;
+
+                // Getting actual number of pages if we have movies left (10 movies per page)
+                if (remainder > 0) {
+                    numOfPages = Math.floor(numOfPages + 1)
+                }
+
+                // Rendering page selection based on current page
+                if (currentPage == 1) {
+
+                    const pagesDiv = document.createElement("div");
+                    const nextButton = document.createElement("button");
+                    const nextPage = currentPage + 1;
+                    const newUserInput = userInputString.substring(0, userInputString.indexOf("page=") + "page".length + 1);
+                    console.log(newUserInput);
+
+                    nextButton.innerHTML = "Next";
+                    nextButton.addEventListener("click", 
+                        (e) => {
+                            e.preventDefault();
+                            location.href = `../movie-listing?searching=${newUserInput}${nextPage}`
+                        }
+                    )
+                    
+                    pagesDiv.classList.add("page-selection");
+                    pagesDiv.innerHTML = `
+                    <p>Page ${getUrlParams("page")} of ${numOfPages}</p>
+                    `
+                    pagesDiv.appendChild(nextButton);
+
+                    document.querySelector(".movie-list-container").appendChild(pagesDiv);
+
+                } else if (currentPage == numOfPages) {
+
+                    const pagesDiv = document.createElement("div");
+                    const previousButton = document.createElement("button");
+                    const previousPage = currentPage - 1;
+                    const newUserInput = userInputString.substring(0, userInputString.indexOf("page=") + "page".length + 1);
+                    console.log(newUserInput);
+
+                    previousButton.innerHTML = "Previous";
+                    previousButton.addEventListener("click", 
+                        (e) => {
+                            e.preventDefault();
+                            location.href = `../movie-listing?searching=${newUserInput}${previousPage}`
+                        }
+                    )
+                    
+                    pagesDiv.classList.add("page-selection");
+                    pagesDiv.innerHTML = `
+                    <p>Page ${getUrlParams("page")} of ${numOfPages}</p>
+                    `
+                    pagesDiv.appendChild(previousButton);
+                    
+
+                    document.querySelector(".movie-list-container").appendChild(pagesDiv);
+
+                } else {
+                    
+                    const pagesDiv = document.createElement("div");
+                    const previousButton = document.createElement("button");
+                    const previousPage = currentPage - 1;
+                    const nextButton = document.createElement("button");
+                    const nextPage = currentPage + 1;
+                    const newUserInput = userInputString.substring(0, userInputString.indexOf("page=") + "page".length + 1);
+                    console.log(newUserInput);
+
+                    previousButton.innerHTML = "Previous";
+                    previousButton.addEventListener("click", 
+                        (e) => {
+                            e.preventDefault();
+                            location.href = `../movie-listing?searching=${newUserInput}${previousPage}`
+                        }
+                    )
+                    nextButton.innerHTML = "Next";
+                    nextButton.addEventListener("click", 
+                        (e) => {
+                            e.preventDefault();
+                            location.href = `../movie-listing?searching=${newUserInput}${nextPage}`
+                        }
+                    )
+                    
+                    pagesDiv.classList.add("page-selection");
+                    pagesDiv.innerHTML = `
+                    <p>Page ${getUrlParams("page")} of ${numOfPages}</p>
+                    `
+                    pagesDiv.appendChild(previousButton);
+                    pagesDiv.appendChild(nextButton);
+                    
+
+                    document.querySelector(".movie-list-container").appendChild(pagesDiv);
+
+                }
+            }
         }
     )
 }
 
-export function toMovieListing (event) {
+export function toMovieListing (event, page=1) {
     // This function will take the user to movie-listing page with search input in the URL
     event.preventDefault();
     const userInput = document.querySelector("#user-input").value;
     const newUserInput = userInput.replace(/\s/g, "+");
 
-    location.href = `../movie-listing?searching=${newUserInput}`
+    location.href = `../movie-listing?searching=${newUserInput}&page=${page}`
 }
 
+// Getting button and adding event listener
 const inputButton = document.querySelector(".btn_search");
 
 inputButton.addEventListener("click", 
@@ -59,6 +164,13 @@ inputButton.addEventListener("click",
     }
 )
 
+// Redering movies based on URL
 if (getUrlParams("searching") !== null) {
-    renderMovies(getUrlParams("searching"));
+    const userSearch = getUrlParams("searching");
+    const userPage = getUrlParams("page");
+    
+    renderMovies(`${userSearch}&page=${userPage}`);
 }
+
+// const moviesResponse = services.returnMovies(services.moviesSearch("batman+the+dark+knight"));
+// console.log(moviesResponse);
