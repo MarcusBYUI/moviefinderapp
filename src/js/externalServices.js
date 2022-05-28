@@ -21,13 +21,13 @@ class ExternalServices {
     //function to check name string and retrun it as a callback to the
     // decide the name and year
 
-    const list = ["batman", "superman", 2022];
+    const list = ["batman", "superman", 2022, "matrix", 2019, "Spiderman", "Star Wars", "Thor", 2021, "Jurassic Park", "Top Gun", "Avatar", "Avengers", "Joker", "Justice League", "Interstellar", "Inception", "Chernobyl", 2000, "Forrest Gump"];
     const date = new Date().getFullYear();
 
     const index = Math.floor(Math.random() * list.length);
     // returns the movies on the homepage
     if (name == "home") {
-      return `s=${list[index]}&y=${date}`;
+      return `s=${list[index]}`;
     }
     // returns the movie for the details page
     else if (details) {

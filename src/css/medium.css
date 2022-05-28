@@ -6,7 +6,7 @@
     text-align: center;
     align-items: center;
   }
-  .movie_section {
+  #movie_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 15px;
@@ -15,7 +15,7 @@
     margin: 0 auto;
   }
 
-  #movie-details {
+  .movie-details {
     max-width: 800px;
     padding: 18px;
   }
