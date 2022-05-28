@@ -20,7 +20,7 @@ export function renderMovies(userInputString) {
             for (const movie of movies) {
                 //Creating div containers for each movie
                 const movieInfo = document.createElement("div");
-                movieInfo.classList.add = "movie-short-info";
+                
 
                 let movieImg = movie.Poster;
 
@@ -37,7 +37,7 @@ export function renderMovies(userInputString) {
 
                 <p>Year: ${movie.Year}</p>
                 `
-        
+                movieInfo.classList.add("movie-short-info");
                 document.querySelector(".movie-list-container").appendChild(movieInfo);
             }
 
