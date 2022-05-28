@@ -1,5 +1,5 @@
 /* 35em is also 560px (if basefont is 16px) */
-@media only screen and (min-width: 35rem) {
+@media only screen and (min-width: 560px) {
   .search_bar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -8,10 +8,9 @@
   }
   .movie_section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 15px;
     margin-top: 25px;
-    width: 70%;
     margin: 0 auto;
   }
 

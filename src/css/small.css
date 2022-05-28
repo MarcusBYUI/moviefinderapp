@@ -35,6 +35,10 @@ nav {
   border-radius: 10%;
   color: black;
 }
+.btn_search:hover{
+  background-color: green;
+  color: white;
+}
 
 /* Main Section */
 /* Creating the Hero */
@@ -52,17 +56,6 @@ nav {
 .movie_section_h2 {
   padding-left: 280px;
 }
-
-.movie_section img {
-  width: 300px;
-  height: 450px;
-  padding: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-}
-
 .search_bar {
   display: grid;
   grid-template-columns: 1fr;
@@ -84,6 +77,18 @@ h2 {
 }
 .movie_section_h2 {
   padding: 0;
+  margin: 35px 0 35px;
+}
+.movie_section img {
+  max-width: 300px;
+  width: 100%;
+  max-height: 450px;
+  height: 100%; 
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
 }
 
 footer {
