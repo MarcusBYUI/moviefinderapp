@@ -8,7 +8,7 @@ loadHeaderFooter();
 function movieHomeShow(){
   const externals = new ExternalServices();
   const divContainer = document.querySelector("#movie_section");
-  for (let i = 0; i <= 7; i++) {
+  for (let i = 0; i <= 11; i++) {
     const movies = externals.returnMovies(externals.moviesSearch());  
     movies.then((data)=>{
     console.log(data);
@@ -18,10 +18,14 @@ function movieHomeShow(){
     let Id = data.Search[index].imdbID;
     
     let aSource = document.createElement("a");
-    aSource.setAttribute("href", Id);
+    aSource.setAttribute("href", `../movie-details?movie=${Id}`);
 
-    let title = document.createElement("div");
-    title.setAttribute("class", "recent-movies");
+    let div = document.createElement("div");
+    div.setAttribute("class", "recent-movies");
+
+    let title = data.Search[index].Title;
+    let h3 = document.createElement("h3");
+    h3.innerHTML = title;
 
     let posterContainer = document.createElement("img");
     let posterSource = data.Search[index].Poster;
@@ -30,10 +34,11 @@ function movieHomeShow(){
     } else {
       posterContainer.setAttribute("src", data.Search[index].Poster);
     }
-    posterContainer.setAttribute("alt", data.Search[index].Title);
+    posterContainer.setAttribute("alt", title);
     aSource.appendChild(posterContainer);
-    title.appendChild(aSource);
-    divContainer.appendChild(title);
+    div.appendChild(aSource);
+    div.appendChild(h3);
+    divContainer.appendChild(div);
 
   });
 }

@@ -2,9 +2,12 @@
 @media only screen and (min-width: 35rem) {
   .search_bar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     text-align: center;
     align-items: center;
+  }
+  .text_hero {
+    font-size: 19px;
   }
   #movie_section {
     display: grid;
