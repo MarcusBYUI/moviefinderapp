@@ -1,8 +1,8 @@
 import ExternalServices from "./externalServices";
 import { loadHeaderFooter } from "./utils";
+import { toMovieListing } from "./movie-listingRender";
 
 loadHeaderFooter();
 
-const externals = new ExternalServices();
-
-externals.returnMovies(externals.moviesSearch());
+// Exposing search funtion to html
+window.toMovieListing = toMovieListing;
