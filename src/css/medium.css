@@ -13,6 +13,24 @@
     margin-top: 25px;
     margin: 0 auto;
   }
+  .movie-short-info{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .movie-short-info a{
+    color: black;
+  }
+  .movie-short-info p{
+    font-weight: bold;
+  }
+  .movieChild2{
+    margin-left: 15px;
+  }
+
 
   #movie-details {
     max-width: 800px;

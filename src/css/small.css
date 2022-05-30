@@ -99,6 +99,25 @@ footer {
   color: white;
 }
 
+
+
+
+/* Movie-Listing Page */
+
+.movie-short-info{
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.movieChild2 a {
+  color: black;
+}
+.movieChild2 p{
+  font-weight: bold;
+}
+
 /* ..
     ..
     Movie Details Page

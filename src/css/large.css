@@ -7,4 +7,16 @@
         margin-top: 25px;
         margin: 0 auto;
       }
-}
+      .movie-short-info{
+        display: grid;
+        grid-template-columns: 15% 75%;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+      }
+      .movieChild2{
+        margin-left: 25px;
+      }
+    }
+
+    
