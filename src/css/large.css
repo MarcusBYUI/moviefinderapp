@@ -1,7 +1,27 @@
 /* 64em is also 1028px (if basefont is 16px) */
-@media only screen and (min-width: 64rem) {
-
+@media only screen and (min-width: 1200px) {
+    .movie_section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 15px;
+        margin-top: 25px;
+        margin: 0 auto;
+      }
+      .movie-short-info{
+        display: grid;
+        grid-template-columns: 15% 75%;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+      }
+      .movieChild2{
+        margin-left: 25px;
+      }
   .text_hero{
     font-size: 22px;
   }
-}
+    }
+
+
+    
+
