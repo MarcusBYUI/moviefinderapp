@@ -1,3 +1,7 @@
 /* 64em is also 1028px (if basefont is 16px) */
 @media only screen and (min-width: 64rem) {
+
+  .text_hero{
+    font-size: 22px;
+  }
 }
