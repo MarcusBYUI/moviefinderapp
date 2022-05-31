@@ -5,6 +5,7 @@ loadHeaderFooter();
 
 
 
+
 function movieHomeShow(){
   const externals = new ExternalServices();
   const divContainer = document.querySelector("#movie_section");

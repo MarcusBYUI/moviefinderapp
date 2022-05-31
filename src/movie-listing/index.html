@@ -4,27 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order Successful</title>
+
+    <title>Movies</title>
+    <!-- <link rel="stylesheet" href="../css/style.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link href="../css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="../css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="../css/large.css" rel="stylesheet">
   </head>
   <body>
-    <header class="divider" id="main-header"></header>
+    <header class="divider" id="main-header">
+      <nav>
+        <form class="search_bar" method="#">
+          <div class="nav-child"><a href=""><img src="../icons/8202294731595452646.svg" class="img_icon" width="80px" alt=""></a></div>
+          <div class="nav-child"><input id="user-input" type="text" height="72px" placeholder="Enter your movie here..." required></div>
+          <div class="nav-child"><button class="btn_search"> Search </button></div>  
+        </form>
+      </nav>
+    </header>
 
     <main>
-      <!--These divs below are for testing-->
-      <div class="movie-info-short">
-        <h1>Star Trek</h1>
-        <a href="../movie-details?movie=tt0796366">Show more...</a>
+      
+      <div class="movie-list-container">
+        <!--Movies will be inserted here-->
       </div>
-
-      <div class="movie-info-short">
-        <h1>Mad Max</h1>
-        <a href="../movie-details?movie=tt0079501">Show more...</a>
-      </div>
-      <!--These divs up here are for testing-->
+      
     </main>
 
-    <footer id="main-footer"></footer>
+    <footer id="main-footer">
+      <div class="text_footer">
+        <P>Developers: Lugo Tehuitzil | Rony Calderon | Marcus Ayodeji | Kevin Pena</P>
+        <P>WDD 330 Copy Rights Reserved</P>
+      </div>
+    </footer>
 
-    <script src="" type=""></script>
+    <script src="../js/movie-listing.js" type="module"></script>
   </body>
 </html>
