@@ -1,7 +1,1 @@
-import { loadHeaderFooter as o, changeHeaderPath as e } from "./utils.js";
-import { toMovieListing as i } from "./movie-listingRender.js";
-import s from "./movie-detailsProcess.js";
-o(), (window.toMovieListing = i);
-const t = new s();
-t.pullMovie();
-const a = setTimeout(e, 500);
+var a=(e,n,i)=>new Promise((m,r)=>{var l=o=>{try{s(i.next(o))}catch(t){r(t)}},c=o=>{try{s(i.throw(o))}catch(t){r(t)}},s=o=>o.done?m(o.value):Promise.resolve(o.value).then(l,c);s((i=i.apply(e,n)).next())});import{loadHeaderFooter as d,changeHeaderPath as p}from"./utils.js";import{toMovieListing as v}from"./movie-listingRender.js";import g from"./movie-detailsProcess.js";window.toMovieListing=v;const w=()=>a(this,null,function*(){yield d();const e=new g;e.pullMovie(),p()});w();

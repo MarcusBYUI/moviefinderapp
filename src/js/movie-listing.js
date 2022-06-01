@@ -3,13 +3,10 @@ import ExternalServices from "./externalServices";
 import { toMovieListing, renderMovies } from "./movie-listingRender";
 import { getUrlParams, loadHeaderFooter, changeHeaderPath } from "./utils";
 
-const services = new ExternalServices();
-
-loadHeaderFooter();
 //Exposing search function to html
 window.toMovieListing = toMovieListing;
+const services = new ExternalServices();
 
-// Redering movies based on URL
 if (getUrlParams("searching") !== null) {
   const userSearch = getUrlParams("searching");
   const userPage = getUrlParams("page");
@@ -17,5 +14,14 @@ if (getUrlParams("searching") !== null) {
   renderMovies(`${userSearch}&page=${userPage}`, services);
 }
 
-// Change Homepage Icon and source paths
-setTimeout(changeHeaderPath, 250);
+const main = async () => {
+  await loadHeaderFooter();
+
+  // Redering movies based on URL
+
+  // Change Homepage Icon and source paths
+  changeHeaderPath();
+  //setTimeout(changeHeaderPath, 250);
+};
+
+main();
