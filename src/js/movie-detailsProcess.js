@@ -17,10 +17,15 @@ class DetailsProcess {
     //set document title
     document.title += ` . ${this.movie.Title}`;
     //set document description
+    console.log(this.movie);
     document.getElementsByTagName("meta")[
       "description"
     ].content = `Movies details page for ${this.movie.Title}`;
-    document.querySelector(".details-page-image").src = this.movie.Poster;
+    if (this.movie.Poster === "N/A"){
+      document.querySelector(".details-page-image").src = `https://via.placeholder.com/300x450/000000/FFFFFF/?text=${this.movie.Title}`;
+    } else {
+      document.querySelector(".details-page-image").src = this.movie.Poster;
+    }
     document.querySelector(".details-page-image").alt = this.movie.Title;
     document.querySelector(".details-page-title").innerHTML = this.movie.Title;
 
@@ -32,12 +37,35 @@ class DetailsProcess {
     document.querySelector(
       ".movie-details-description"
     ).innerHTML = this.movie.Plot;
-    document.querySelector(".details-page-imdb").innerHTML =
-      this.movie.Ratings[0].Value || "N/A";
-    document.querySelector(".details-page-tomatoes").innerHTML =
-      this.movie.Ratings[1].Value || "N/A";
+    if (this.movie.Ratings.length === 1){
+      document.querySelector(".details-page-imdb").innerHTML =
+      this.movie.Ratings[0].Value;
+      document.querySelector(".details-page-tomatoes").innerHTML =
+      "N/A";
     document.querySelector(".details-page-metacritic").innerHTML =
-      this.movie.Ratings[2].Value || "N/A";
+      "N/A";
+    } else if (this.movie.Ratings.length === 2){
+      document.querySelector(".details-page-imdb").innerHTML =
+      this.movie.Ratings[0].Value;
+      document.querySelector(".details-page-tomatoes").innerHTML =
+      this.movie.Ratings[1].Value;
+      document.querySelector(".details-page-metacritic").innerHTML =
+      "N/A";
+    } else if(this.movie.Ratings.length === 3) {
+      document.querySelector(".details-page-imdb").innerHTML =
+      this.movie.Ratings[0].Value;
+    document.querySelector(".details-page-tomatoes").innerHTML =
+      this.movie.Ratings[1].Value;
+    document.querySelector(".details-page-metacritic").innerHTML =
+      this.movie.Ratings[2].Value;
+    } else {
+      document.querySelector(".details-page-imdb").innerHTML =
+      "N/A";
+    document.querySelector(".details-page-tomatoes").innerHTML =
+      "N/A";
+    document.querySelector(".details-page-metacritic").innerHTML =
+      "N/A";
+    }
     document.querySelector(
       ".details-page-released"
     ).innerHTML = this.movie.Released;
@@ -54,6 +82,43 @@ class DetailsProcess {
     document.querySelector(
       ".details-page-writers"
     ).innerHTML = this.movie.Writer;
+
+    //Like Button
+
+    const likeBtn = document.querySelector(".like__btn");
+    const likeIcon = document.querySelector("#icon");
+    const count = document.querySelector("#count");
+
+    //Button clicked
+    let clicked = false;
+    let thumbsUp = "fa-solid fa-thumbs-up";
+    let thumbsDown = "fa-regular fa-thumbs-up";
+    
+    const lastlike = window.localStorage.getItem(`liked${this.movieId}`);
+    
+        if (lastlike == this.movieId){
+          likeIcon.innerHTML = `<i class = "${thumbsUp}"></i>`;
+          count.textContent++;
+          clicked = true;
+        }
+        
+    likeBtn.addEventListener("click", () => {
+      
+      if(!clicked) {
+        clicked = true;
+        likeIcon.innerHTML = `<i class = "${thumbsUp}"></i>`;
+        count.textContent++;
+        localStorage.setItem(`liked${this.movieId}`, this.movieId);
+        
+      }
+      else {
+        clicked = false;
+        likeIcon.innerHTML = `<i class = "${thumbsDown}"></i>`;
+        count.textContent--;
+        localStorage.removeItem(`liked${this.movieId}`, this.movieId);
+        
+      }
+});
   }
 }
 

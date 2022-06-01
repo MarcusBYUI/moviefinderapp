@@ -1,9 +1,10 @@
 // This file is to display a list of movies based on user input
 import ExternalServices from "./externalServices";
-import {renderMovies, toMovieListing} from "./movie-listingRender";
+
 import { getUrlParams, loadHeaderFooter } from "./utils";
 
 const services = new ExternalServices();
+
 
 loadHeaderFooter()
 //Exposing search function to html
