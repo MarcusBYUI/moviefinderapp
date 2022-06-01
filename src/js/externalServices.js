@@ -8,7 +8,7 @@ function convertToJson(res) {
 
 class ExternalServices {
   constructor() {
-    this.api = "http://www.omdbapi.com/?&apikey=466aa9b6";
+    this.api = "https://www.omdbapi.com/?&apikey=466aa9b6";
   }
 
   async returnMovies(callback) {
