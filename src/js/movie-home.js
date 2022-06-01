@@ -13,7 +13,6 @@ function movieHomeShow(){
   for (let i = 0; i <= 11; i++) {
     const movies = externals.returnMovies(externals.moviesSearch());  
     movies.then((data)=>{
-    console.log(data);
     let arrayLen = data.Search.length;
     
     let index = Math.floor(Math.random() * arrayLen);

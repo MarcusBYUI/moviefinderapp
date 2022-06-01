@@ -1,6 +1,6 @@
 // This file is to display a list of movies based on user input
 import ExternalServices from "./externalServices";
-import {renderMovies, toMovieListing} from "./movie-listingRender";
+
 import { getUrlParams, loadHeaderFooter } from "./utils";
 
 const services = new ExternalServices();
@@ -156,7 +156,7 @@ export function renderMovies(userInputString) {
     )
 }
 
-export function toMovieListing (event, page=1) {
+export function toMovieListing (event, page = 1) {
     // This function will take the user to movie-listing page with search input in the URL
     event.preventDefault();
     const userInput = document.querySelector("#user-input").value;

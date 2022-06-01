@@ -26,6 +26,7 @@ export function renderMovies(userInputString, services) {
                     <h1>Oops!!</h1>
                     <p>Something went wrong</p>
                     <p>${moviesList.Error}</p>
+                    <p>Please try again</p>
                     `;
             }
 
@@ -125,7 +126,7 @@ export function renderMovies(userInputString, services) {
     )
 }
 
-export function toMovieListing (page=1) {
+export function toMovieListing (page = 1) {
     // This function will take the user to movie-listing page with search input in the URL
 
     const userInput = document.querySelector("#user-input").value;
