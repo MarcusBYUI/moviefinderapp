@@ -1,8 +1,6 @@
 * {
   margin: 0;
 }
-
-/* Globals */
 body {
   font-family: "Oswald", sans-serif;
 }
@@ -17,7 +15,7 @@ h2 {
 }
 .text_hero {
   font-size: 16px;
-  background-color: #f0ebe79f;
+  background-color: rgba(240, 235, 231, 0.624);
   text-align: center;
   padding: 0.5rem;
 }
@@ -26,31 +24,26 @@ nav input {
   border-radius: 7%;
   width: 100%;
 }
-/* Header Styles */
 nav {
   background-color: #6a040f;
   padding: 10px;
 }
-
 .btn_search {
   height: 50px;
   width: 100px;
   border-radius: 10%;
-  color: black;
+  color: #000;
 }
 .btn_search:hover {
   background-color: green;
-  color: white;
+  color: #fff;
 }
-
-/* Main Section */
-/* Creating the Hero */
 .hero {
   height: 500px;
-  background-image: url("https://images.unsplash.com/photo-1595769816263-9b910be24d5f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1479");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1479);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hero_content {
   text-align: center;
@@ -59,7 +52,6 @@ nav {
 .movie_section_h2 {
   padding-left: 280px;
 }
-
 #lastvisit {
   align-items: center;
   text-align: center;
@@ -67,7 +59,6 @@ nav {
   width: 100%;
   display: block;
 }
-
 #movie_section img {
   max-width: 320px;
   width: 100%;
@@ -85,7 +76,7 @@ nav {
 }
 .recent-movies h3 {
   display: none;
-  background-color: #f0ebe7c2;
+  background-color: rgba(240, 235, 231, 0.761);
   grid-column: 1/1;
   grid-row: 1/1;
   padding: 0.3rem;
@@ -97,7 +88,6 @@ nav {
   grid-column: 1/1;
   grid-row: 1/1;
 }
-
 .search_bar {
   display: grid;
   grid-template-columns: 1fr;
@@ -128,17 +118,13 @@ h2 {
   margin-right: auto;
   object-fit: cover;
 }
-
 footer {
   background-color: #6a040f;
   height: 100px;
   text-align: center;
   padding-top: 15px;
-  color: white;
+  color: #fff;
 }
-
-/* Movie-Listing Page */
-
 .movie-short-info {
   display: grid;
   grid-template-columns: 1fr;
@@ -147,18 +133,11 @@ footer {
   text-align: center;
 }
 .movieChild2 a {
-  color: black;
+  color: #000;
 }
 .movieChild2 p {
   font-weight: bold;
 }
-
-/* ..
-    ..
-    Movie Details Page
-    ..
-    .. */
-
 #movie-details {
   max-width: 90%;
   margin: 0 auto;
@@ -169,93 +148,77 @@ footer {
   grid-template-columns: 1fr;
   grid-gap: 20px;
 }
-
 .movie-details-top-container h1 {
   margin: 0;
 }
-
 .movie-details-description {
   text-align: justify;
 }
-
 .movie-details-brief {
   display: flex;
   flex-direction: row;
   margin: 10px 0 20px 0;
 }
-
 .movie-details-brief p {
   margin-right: 10px;
   font-weight: 500;
 }
-
 .movie-details-poster-container img {
   width: 100%;
   height: 300px;
   object-fit: contain;
 }
-
 .movie-details-ratings {
   margin-top: 18px;
 }
-
 .movie-details-ratings h2 {
   font-size: 20px;
   text-align: left;
   font-weight: 400;
   margin-bottom: 10px;
 }
-
 .like__btn {
   padding: 10px 15px;
   background-color: #6a040f;
-  color: aliceblue;
+  color: #f0f8ff;
   border-radius: 5px;
   border: none;
   margin-top: 1rem;
   cursor: pointer;
   outline: none;
 }
-
 .movie-details-ratings-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3px;
 }
-
 .movie-details-ratings-container div {
   background-color: #6a040f;
-  color: white;
+  color: #fff;
   padding: 25px 0;
   text-align: center;
 }
-
 .movie-details-ratings-container div h3 {
   font-weight: 400;
   font-size: 16px;
 }
-
 .movie-details-ratings-container div p {
   font-size: 12px;
   margin-top: 5px;
 }
-
 .movie-details-info-container {
   margin: 50px 0;
   display: grid;
   grid-template-columns: 1fr;
 }
-
 .movie-details-info {
   display: grid;
   grid-template-columns: 85px 1fr;
   margin-top: 15px;
 }
-
 .movie-details-info :nth-child(1) {
   font-weight: 500;
 }
-
 .movie-details-info :nth-child(2) {
   font-weight: 400;
 }

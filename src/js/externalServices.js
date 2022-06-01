@@ -21,8 +21,41 @@ class ExternalServices {
     //function to check name string and retrun it as a callback to the
     // decide the name and year
 
-    const list = ["batman", "superman", 2022, "matrix", 2019,"men in black", "Spiderman", "Star Wars", "Thor", 2021, "Jurassic Park", "Top Gun", "Avatar", "Avengers", "Joker", "Justice League", 2000, 2018, "Interstellar", "Inception", "Chernobyl", "Antman", "hunger games", "godzilla", "kong", "doctor strange", "wonderwoman", "Harry potter", "lord of the rings", "Fast and furious", "scream", "Zombieland", "Saw"];
-    const date = new Date().getFullYear();
+    const list = [
+      "batman",
+      "superman",
+      2022,
+      "matrix",
+      2019,
+      "men in black",
+      "Spiderman",
+      "Star Wars",
+      "Thor",
+      2021,
+      "Jurassic Park",
+      "Top Gun",
+      "Avatar",
+      "Avengers",
+      "Joker",
+      "Justice League",
+      2000,
+      2018,
+      "Interstellar",
+      "Inception",
+      "Chernobyl",
+      "Antman",
+      "hunger games",
+      "godzilla",
+      "kong",
+      "doctor strange",
+      "wonderwoman",
+      "Harry potter",
+      "lord of the rings",
+      "Fast and furious",
+      "scream",
+      "Zombieland",
+      "Saw",
+    ];
 
     const index = Math.floor(Math.random() * list.length);
     // returns the movies on the homepage

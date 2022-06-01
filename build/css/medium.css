@@ -1,4 +1,3 @@
-/* 35em is also 560px (if basefont is 16px) */
 @media only screen and (min-width: 560px) {
   .search_bar {
     display: grid;
@@ -23,9 +22,8 @@
     padding: 10px;
     text-align: left;
   }
-
   .movie-short-info a {
-    color: black;
+    color: #000;
   }
   .movie-short-info p {
     font-weight: bold;
@@ -33,7 +31,6 @@
   .movieChild2 {
     margin-left: 15px;
   }
-
   .movie-details {
     max-width: 800px;
     padding: 18px;
@@ -44,7 +41,6 @@
   .movie-details-ratings-container div h3 {
     font-size: 20px;
   }
-
   .movie-details-ratings-container div p {
     font-size: 16px;
   }

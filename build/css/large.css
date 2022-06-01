@@ -1,4 +1,3 @@
-/* 64em is also 1028px (if basefont is 16px) */
 @media only screen and (min-width: 1200px) {
   #movie_section {
     max-width: 1280px;
