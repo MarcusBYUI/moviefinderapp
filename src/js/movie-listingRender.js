@@ -33,6 +33,8 @@ export function renderMovies(userInputString, services) {
             for (const movie of movies) {
                 //Creating div containers for each movie
                 const movieInfo = document.createElement("div");
+                const movieChild1 = document.createElement("div");
+                const movieChild2 = document.createElement("div")
                 
 
                 let movieImg = movie.Poster;
@@ -41,9 +43,10 @@ export function renderMovies(userInputString, services) {
                     movieImg = "https://picsum.photos/300/450";
                 }
 
-                movieInfo.innerHTML = `
+                movieChild1.innerHTML = `
                 <img src="${movieImg}" alt="${movie.Title}">
-            
+                `
+                movieChild2.innerHTML = `
                 <a href="../movie-details?movie=${movie.imdbID}">
                     <h1>${movie.Title}</h1>
                 </a>
@@ -51,6 +54,10 @@ export function renderMovies(userInputString, services) {
                 <p>Year: ${movie.Year}</p>
                 `
                 movieInfo.classList.add("movie-short-info");
+                movieChild1.classList.add("movieChild1");
+                movieChild2.classList.add("movieChild2");
+                movieInfo.appendChild(movieChild1)
+                movieInfo.appendChild(movieChild2)
                 document.querySelector(".movie-list-container").appendChild(movieInfo);
             }
 
