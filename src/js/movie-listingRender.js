@@ -16,16 +16,17 @@ export function renderMovies(userInputString, services) {
 
       if (moviesList.Error == "Too many results.") {
         document.querySelector(".movie-list-container").innerHTML = `
-                    <h1>Oops!!</h1>
+                    <div class="many-results"><h1>Oops!!</h1>
                     <p>Something went wrong</p>
-                    <p>${moviesList.Error} Try seaching with more specific words.</p>
+                    <p>${moviesList.Error}</p>
+                    <p> Try seaching with more specific words.</p></div>
                     `;
       } else if (moviesList.Error == "Movie not found!") {
         document.querySelector(".movie-list-container").innerHTML = `
-                    <h1>Oops!!</h1>
+                    <div class="not-found"><h1>Oops!!</h1>
                     <p>Something went wrong</p>
                     <p>${moviesList.Error}</p>
-                    <p>Please try again</p>
+                    <p>Please try again</p></div>
                     `;
       }
 

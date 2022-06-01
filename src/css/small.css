@@ -140,17 +140,22 @@ footer {
 /* Movie-Listing Page */
 
 .movie-short-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  border: 1px solid black;
+  
+  border: 2px solid #6a040f;
   padding: 10px;
   text-align: center;
+  
 }
 .movieChild2 a {
   color: black;
 }
 .movieChild2 p {
   font-weight: bold;
+}
+.many-results, .not-found{
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ..
