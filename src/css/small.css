@@ -77,13 +77,25 @@ nav {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
-  background-color:#0000009f;
+  background-color: #0000009f;
   padding: 0;
   transition: padding 0.25s;
 }
-#movie_section img:hover{
+#movie_section img:hover {
   padding: 0.5rem;
 }
+
+#movie_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 15px;
+  margin-top: 25px;
+  margin: 0 auto;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
 .recent-movies {
   display: grid;
   text-align: center;
