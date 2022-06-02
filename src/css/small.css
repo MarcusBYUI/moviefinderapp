@@ -41,6 +41,7 @@ nav {
 .btn_search:hover {
   background-color: green;
   color: white;
+  transition: all 0.5s;
 }
 
 /* Main Section */
@@ -72,11 +73,16 @@ nav {
   max-width: 320px;
   width: 100%;
   max-height: 450px;
-  padding: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
+  background-color:#0000009f;
+  padding: 0;
+  transition: padding 1s;
+}
+#movie_section img:hover{
+  padding: 0.5rem;
 }
 .recent-movies {
   display: grid;
@@ -85,14 +91,16 @@ nav {
 }
 .recent-movies h3 {
   display: none;
-  background-color: #f0ebe7c2;
   grid-column: 1/1;
   grid-row: 1/1;
-  padding: 0.3rem;
+  padding: 0.5rem;
+  background-color: #f0ebe7c2;
+  width: 100%;
 }
 .recent-movies:hover h3 {
   display: block;
 }
+
 .recent-movies a {
   grid-column: 1/1;
   grid-row: 1/1;
@@ -243,6 +251,10 @@ footer a {
   margin-top: 1rem;
   cursor: pointer;
   outline: none;
+  transition: padding 0.8s;
+}
+.like__btn:hover {
+  padding: 13px 18px;
 }
 
 .movie-details-ratings-container {
