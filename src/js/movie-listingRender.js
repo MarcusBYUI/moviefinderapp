@@ -127,7 +127,6 @@ export function toMovieListing() {
   let initialPath = "";
 
   const userInput = document.querySelector("#user-input").value;
-  const newUserInput = userInput.replace(/\s/g, "+");
 
   if (
     currentPage.includes("movie-details") ||
@@ -136,5 +135,9 @@ export function toMovieListing() {
     initialPath = "../";
   }
 
-  location.href = `${initialPath}movie-listing/?searching=${newUserInput}&page=1`;
+  if (userInput.trim() == "") {
+    return;
+  }
+
+  location.href = `${initialPath}movie-listing/?searching=${userInput.trim()}&page=1`;
 }
