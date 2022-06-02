@@ -137,14 +137,16 @@ footer {
   color: white;
 }
 
+footer a {
+  color: #e0e805;
+}
+
 /* Movie-Listing Page */
 
 .movie-short-info {
-  
   border: 2px solid #6a040f;
   padding: 10px;
   text-align: center;
-  
 }
 .movieChild2 a {
   color: black;
@@ -152,10 +154,31 @@ footer {
 .movieChild2 p {
   font-weight: bold;
 }
-.many-results, .not-found{
+.many-results,
+.not-found {
   padding: 1rem;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.page-selection {
+  display: grid;
+  grid-template-columns: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  justify-items: center;
+}
+
+.page-selection button {
+  min-width: 150px;
+}
+
+.page-selection button,
+.page-selection p {
+  margin-top: 1rem;
+  padding: 0.5rem;
 }
 
 /* ..
