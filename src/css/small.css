@@ -79,7 +79,7 @@ nav {
   object-fit: cover;
   background-color:#0000009f;
   padding: 0;
-  transition: padding 1s;
+  transition: padding 0.25s;
 }
 #movie_section img:hover{
   padding: 0.5rem;
